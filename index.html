@@ -1,0 +1,256 @@
+<html lang="uk">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content>
+      <link red="stylesheet" type="text/css" href="styles.css" />
+    </head>
+    <style> 
+     
+     body { 
+        background: linear-gradient(135deg, #00B4D8 0%, #7209B7 100%);
+        min-height: 50vh;
+        margin: 0;
+        font-family: 'Inter', sans-serif;
+        color: white;
+        margin-top: 0 !important;
+        transition: background 0.5s ease; 
+        overflow-x: hidden; 
+     }
+    
+    h1{
+        font-family:monospace;
+        color: rgb(255, 255, 255);
+        font-size: 50pt; 
+        text-align: center;
+    } 
+    
+    
+    img {
+        display: block;
+        margin: 40px auto 20px auto;
+        max-width: 100%;
+        height: auto;
+    }
+    
+   
+    .btn {
+      position: relative;
+      display: inline-block;
+      width: 300px;
+      padding: 30px 20px;
+      margin: 10px;
+      font-size: 18px;
+      text-align: center;
+      color: white;
+      background: transparent;
+      cursor: pointer;
+      overflow: hidden;
+      transition: color 0.4s ease;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    
+    .btn::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 100%;
+       background: linear-gradient(135deg, #4542e0, #0cbbda);
+      z-index: -1;
+      transition: width 0.4s ease;
+    }
+
+    
+    .btn:hover {
+      color: rgb(71, 20, 192);
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .btn:hover::before {
+      width: 100%;
+    }
+
+    
+    .button-container {
+        display: flex; 
+        justify-content: center;
+        padding: 20px 10px;
+    }
+
+   html, body{
+        height: 100%;
+        margin: 0;
+    }
+ 
+  
+     .footer {
+            background: linear-gradient(135deg, #1893ac 0%, #740fb8 100%);
+            padding: 40px 20px;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        .footer-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .footer-left, .footer-right {
+            flex: 1 1 300px;
+        }
+
+        .footer-left p { color: #ffffff; margin-top: 12px; }
+        .footer-right h2 { margin-bottom: 24px; }
+
+        .footer-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 12px;
+            gap: 10px;
+        }
+
+        .footer-item a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+        
+        .footer-item span {
+            color: #ffd700;
+        }
+
+        .footer-social {
+            margin-top: 15px;
+            display: flex;
+            gap: 12px;
+        }
+
+        .soc {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px;
+            border-radius: 8px;
+            font-size: 20px;
+            text-decoration: none;
+            color: white;
+            transition: background 0.2s;
+        }
+        
+        .soc:hover {
+            background: rgba(255, 255, 255, 0.4);
+        }
+
+
+    
+    @media (max-width: 768px) {
+        
+        
+        h1 {
+            font-size: 50pt;
+            line-height: 1.2;
+            padding: 0 10px;
+        }
+
+        
+        
+        
+
+        
+       
+        .btn {
+            width: 90%;
+            padding: 20px 10px; 
+            margin: 10px auto; 
+            font-size: 16px;
+        }
+
+        
+        .footer {
+            padding: 30px 20px;
+        }
+
+        .footer-container {
+            flex-direction: column; 
+            gap: 20px;
+        }
+
+        .footer-right h2 {
+            margin-top: 20px;
+        }
+    }
+   </style>
+   
+        <img src="Screenshot_10-removebg-preview.png" alt="" height="200px" width="350px">
+           <h1>ДЕРЖАВА У СМАРТФОНІ</h1>
+        <h1>ЦИФРОВА УКРАЇНА</h1>
+        <div style="display: flex; justify-content: center;">
+            <center>
+                <a href="dosahneva.html"><button class="btn">ДОСЯГНЕННЯ</button></a> 
+                <a href="vidhuk.html"><button class="btn">ВІДГУК </button></a>
+                <a href="pro nas.html"><button class="btn">ПРО НАС </button></a>
+            </center>
+        </div>
+
+<footer class="footer">
+  <div class="footer-container">
+
+   
+    <div class="footer-left">
+      <h2>Ukraine informs</h2>
+      <p>Ми молода компанія яка тільки вийшла на ринок по приводу пошириння цифрових технологів в Україні.
+      <p>Ми намагаємося зробити все можливе щоб кожен українець мав змогу користуватися цифровими технологіями та послугами.</p>
+      <p>Ми працюємо для вас!!!!!!!!!!!
+
+
+      </p>
+    </div>
+
+  
+    <div class="footer-right">
+      <h2>Контакти</h2>
+
+      <div class="footer-item">
+        <span class="icon">📍</span>
+        <span>м. Вінниця, вул. Стрілецька, буд. 5</span>
+      </div>
+
+      <div class="footer-item">
+        <span class="icon">📞</span>
+        <div>
+          <a href="tel:xxxxxxxxx">+38 xxx xxx xx xx</a><br>
+          <a href="tel:xxxxxxxxx">+38 xxx xxx xx xx</a><br>
+          <a href="tel:+380961324686">+38 096 132 46 86</a>
+        </div>
+      </div>
+
+      <div class="footer-item">
+        <span class="icon">✉️</span>
+        <a href="45_24_bublyk@vmvpu.vn.ua">Якщо є запитання то звертайтеся ми будем тільки раді </a>
+      </div>
+
+      <div class="footer-item">
+        <span class="icon">⏰</span>
+        <span>ПН–ПТ: 8:00 - 16:00,<br>СБ, НД - Вихідний</span>
+      </div>
+
+     
+      <div class="footer-social">
+        <a href="#" class="soc">🌐</a>
+        <a href="#" class="soc">📘</a>
+        <a href="#" class="soc">▶️</a>
+        <a href="#" class="soc">💬</a>
+      </div>
+    </div>
+
+  </div>
+</footer>
+    </body>
+</html>

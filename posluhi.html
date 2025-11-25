@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ПОСЛУГИ ТА ДОКУМЕНТИ В ДІЇ</title>
+    <style>
+      
+        body {
+            background: linear-gradient(135deg, #00B4D8 0%, #7209B7 100%);
+            min-height: 100vh;
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            color: white;
+            background-size: cover;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            overflow-x: hidden;
+        }
+
+       
+        h1 {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: rgb(8, 54, 100);
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 15px;
+            border-radius: 5px;
+            font-size: 2rem;
+            text-align: center;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+        }
+        
+       
+        .content-section {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+   
+        ol {
+            color: #ffd700; 
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1.5rem; /* Збільшено для читабельності */
+            text-align: left;
+            padding-left: 20px;
+            margin-top: 30px;
+        }
+
+        li {
+            color: rgb(248, 248, 248);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1.1rem;
+            text-align: left;
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+        
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+       
+        .top-buttons {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            background: linear-gradient(135deg, #00B4D8 0%, #7209B7 100%); 
+            padding: 10px 0;
+            flex-wrap: wrap; /* Для адаптивності */
+        }
+        
+        .top-buttons a {
+            text-decoration: none;
+            font-size: initial; 
+            margin: 5px 10px; 
+        }
+
+       
+        :root {
+            --bg: #1697b8;
+            --btn-radius: 10px;
+            --glow-radius: 10px;
+            --pad-y: 12px;
+            --pad-x: 20px;
+            --text: #fff;
+            --inner: #1585cf;
+            --speed: 8s;
+            --blur: 20px;
+        }
+
+        .btn {
+            position: relative;
+            display: inline-block;
+            padding: var(--pad-y) var(--pad-x);
+            color: var(--text);
+            background: transparent;
+            border: none;
+            border-radius: var(--btn-radius);
+            cursor: pointer;
+            z-index: 0;
+            letter-spacing: .5px;
+            transition: all 0.3s ease-in-out;
+            font-size: 1rem;
+        }
+
+        .btn::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: var(--inner);
+            border-radius: var(--glow-radius);
+            z-index: -1;
+        }
+
+        .btn::before {
+            content: "";
+            position: absolute;
+            inset: -2px;
+            border-radius: var(--glow-radius);
+            background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #ff00c8, #ff0000);
+            background-size: 600% 600%;
+            z-index: -2;
+            filter: blur(var(--blur));
+            animation: rgbflow var(--speed) linear infinite;
+        }
+
+        .btn:hover::before {
+            filter: blur(calc(var(--blur) * 1.5));
+            animation-play-state: running;
+        }
+
+        @keyframes rgbflow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+      
+        
+        
+        .footer {
+            background: linear-gradient(135deg, #1893ac 0%, #740fb8 100%);
+            padding: 40px 20px;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin-top: 50px;
+        }
+
+        .footer-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 30px;
+        }
+        
+        .footer-left, .footer-right {
+            flex: 1 1 300px;
+        }
+        
+        .footer-left p { color: #ffffff; margin-top: 12px; }
+        .footer-right h2 { 
+            font-family: monospace;
+            color: rgb(255, 255, 255); 
+            background: none; 
+            padding: 0; 
+            font-size: 1.5rem;
+            margin-bottom: 24px;
+        }
+
+        .footer-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 12px;
+            gap: 10px;
+        }
+
+        .footer-item a, .footer-item span {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+
+        .footer-social {
+            margin-top: 15px;
+            display: flex;
+            gap: 12px;
+        }
+
+        .soc {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px;
+            border-radius: 8px;
+            font-size: 20px;
+            text-decoration: none;
+            color: white;
+            transition: background 0.2s;
+        }
+        
+       
+        @media (max-width: 768px) {
+            h1 { font-size: 1.5rem; padding: 10px; }
+            ol { font-size: 1.3rem; }
+            li { font-size: 1rem; }
+            
+            .content-section { 
+                margin: 20px auto; 
+                padding: 15px;
+            }
+            
+            .top-buttons { flex-direction: column; }
+            .top-buttons a { width: 90%; margin: 5px auto; }
+            .btn { width: 100%; }
+
+            .footer-container { flex-direction: column; padding: 0; }
+        }
+    </style>
+</head>
+
+<body>
+    
+    <div class="top-buttons">
+        <a href="dosahneva.html"><button class="btn"> Назад</button></a>
+        <a href="index.html"><button class="btn">Головна</button></a>
+        <a href="vidhuk.html"><button class="btn">Відгук</button></a>
+    </div>
+
+    <div class="content-section">
+        <h1>ПОСЛУГИ ТА ДОКУМЕНТИ В ЕКОСИСТЕМІ "ДІЯ"</h1>
+
+        <ul> 
+            <ol>Цифрові документи:</ol> 
+            <li>Паспорт громадянина України для виїзду за кордон.</li>                                                 
+            <li>Водійське посвідчення.</li>
+            <li>Свідоцтво про реєстрацію транспортного ускладнення.</li>
+            <li>Ідентифікаційний код (РНОКПП).</li>
+            <li>Страховий поліс автоцивільної відповідальності.</li>
+            <li>Свідоцтво про народження дитини (для дітей до 14 років).</li>
+            <li>Тимчасова довідка про несудимість.</li>
+            <li>Електронні лікарняні (Медичні висновки).</li>
+            <li>Електронні рецепти на ліки (Е-рецепти).</li>
+            <li>COVID-сертифікати (в тому числі міжнародні).</li>
+            
+            <ol>Реєстрація та бізнес-послуги:</ol>
+            <li>Реєстрація ФОП (фізичної особи-підприємця).</li>
+            <li>Реєстрація юридичної особи.</li>
+            <li>Зміна даних ФОП.</li>
+            <li>Зміна даних юридичної особи.</li>
+            <li>Закриття ФОП.</li>
+            <li>Закриття юридичної особи.</li>
+            <li>Подання звітності для ФОП та юридичних осіб.</li>
+            <li>Отримання виписки з ЄДР (Єдиного державного реєстру).</li>
+            <li>Отримання ліцензій.</li>
+            <li>Отримання дозволів.</li>
+            <li>Подання заявок на участь у державних закупівлях (Prozorro).</li>
+            <li>Утримання консультацій щодо ведення бізнесу.</li>
+            
+            <ol>Освіта та молодь</ol>
+            <li>Цифровий студентський претендент.</li>
+            <li>Отримання довідок з навчальних закладів.</li>
+            <li>Доступ до державних освітніх програм і піль.</li>
+            <li>Стипендіальні та соціальні програми для студентів.</li>
+            
+            <ol>Транспорт і автомобілі:</ol>
+            <li>Водійське посвідчення (цифрове).</li>
+            <li>Техпаспорт.</li>
+            <li>Перевірка та сплата штрафів за порушення ПДР.</li>
+            <li>Перереєстрація транспортних засобів (частково онлайн).</li>
+            <li>Послуга «єВодій» (комплекс: посвідчення, техпаспорт, страхування).</li>
+            
+            <ol>Земля та нерухомість:</ol>
+            <li>Реєстрація місця (зміна прописки проживання онлайн).</li>
+            <li>Реєстрація нерухомості (частково онлайн).</li>
+            <li>Витяги з державного земельного кадастру.</li>
+            <li>Повідомлення про зруйноване чи пошкодження майно (воєнний час).</li>
+            
+            <ol>Безпека та військові послуги:</ol>
+            <li>Повідомлення про зруйноване житло.</li>
+            <li>Оформлення допомоги переселенцям.</li>
+            <li>ЄВорог (можливість появи про пересування окупантів — під час війни).</li>
+            <li>Військові документи (цифровий військовий квиток).</li>
+            
+            <ol>Охорона здоров'я</ol>
+            <li>COVID-сертифікати (вакцинація, одужання, ПЛР-тести).</li>
+            <li>Дані про медичне страхування.</li>
+            <li>Інтеграція з електронною системою охорони здоров'я (eHealth).</li>
+            
+            <ol>Додаткові послуги</ol>
+            <li>Дія.Підпис — електронний підпис для онлайн-документів.</li>
+            <li>Плата адміністративних послуг і зборів.</li>
+            <li>Доступ до витягів із різних державних реєстрів.
+            <li>Інтеграція з банківськими сервісами (ідентифікація через BankID).</li>
+        </ul>
+    </div>
+    
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-left">
+                <h2>Ukraine informs</h2>
+                <p>Ми молода компанія яка тільки вийшла на ринок по приводу пошириння цифрових технологів в Україні</p>
+            </div>
+            <div class="footer-right">
+                <h2>Контакти</h2>
+                <div class="footer-item">
+                    <span>📍</span>
+                    <span>м. Вінниця, вул. Стрілецька, буд. 5</span>
+                </div>
+                <div class="footer-item">
+                    <span>📞</span>
+                    <div>
+                        <a href="tel:+380961324686">+38 096 132 46 86</a>
+                    </div>
+                </div>
+                <div class="footer-item">
+                    <span>✉️</span>
+                    <a href="mailto:45_24_bublyk@vmvpu.vn.ua">Якщо є запитання то звертайтеся ми будем тільки раді </a>
+                </div>
+                <div class="footer-item">
+                    <span>⏰</span>
+                    <span>ПН–ПТ: 8:00 - 16:00,<br>СБ, НД - Вихідний</span>
+                </div>
+                <div class="footer-social">
+                    <a href="#" class="soc">🌐</a>
+                    <a href="#" class="soc">📘</a>
+                    <a href="#" class="soc">▶️</a>
+                    <a href="#" class="soc">💬</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

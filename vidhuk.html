@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Зворотний зв’язок</title>
+<style>
+  
+  body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(135deg, #00B4D8 0%, #7209B7 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #fff;
+    overflow-x: hidden;
+    padding: 20px 0;
+  }
+  
+  .feedback-card {
+    width: 540px;
+    max-width: 95%;
+    background: linear-gradient(135deg, rgba(135, 0, 255, 0.65), rgba(0, 180, 255, 0.5));
+    border-radius: 16px;
+    box-shadow: 0 0 30px rgba(100, 0, 255, 0.5);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 40px 50px;
+    margin-top: 20px;
+  }
+
+  h1 {
+    font-size: 26px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 10px;
+  }
+
+  p.desc {
+    font-size: 14px;
+    color: #cfcbe8;
+    margin-bottom: 25px;
+  }
+
+  label {
+    display: block;
+    margin-top: 18px;
+    margin-bottom: 6px;
+    font-weight: 500;
+    color: #e4dcff;
+  }
+
+  input, select, textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: none;
+    border-radius: 10px;
+    background: rgba(10, 15, 40, 0.85);
+    color: #fff;
+    font-size: 14px;
+    outline: none;
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+    box-sizing: border-box; /* Важливо для адаптивності */
+  }
+
+  select {
+    appearance: none;
+  }
+
+  textarea {
+    resize: none;
+    min-height: 100px;
+  }
+
+ 
+  .stars {
+    display: flex;
+    gap: 8px;
+    margin-top: 5px;
+  }
+
+  .star {
+    font-size: 26px;
+    cursor: pointer;
+    color: #3f3b88;
+    transition: 0.3s;
+  }
+
+  .star.active {
+    color: #ffbbff;
+    text-shadow: 0 0 10px #ff66ff, 0 0 25px #ff00ff;
+    transform: scale(1.15);
+  }
+
+  small {
+    color: #aaaadd;
+    font-size: 13px;
+  }
+
+
+  .checkbox {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin-top: 15px;
+    font-size: 13px;
+    color: #d1d1ff;
+  }
+  
+  
+  .buttons {
+    display: flex;
+    justify-content: flex-start;
+    gap: 15px;
+    margin-top: 30px;
+  }
+
+  
+  .btn {
+    border: none;
+    border-radius: 10px;
+    padding: 10px 25px;
+    font-size: 15px;
+    color: #fff;
+    background: linear-gradient(135deg, #3000ff, #8500ff);
+    cursor: pointer;
+    box-shadow: 0 0 20px rgba(0, 255, 100, 0.4);
+    transition: 0.3s;
+    text-decoration: none;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+  }
+
+  .btn:hover {
+    box-shadow: 0 0 25px rgba(0, 255, 100, 0.8);
+    transform: scale(1.05);
+  }
+
+  .btn.clear {
+    background: linear-gradient(135deg, #3b007b, #1900ff);
+  }
+
+
+  .hint {
+    font-size: 12px;
+    color: #9b9bff;
+    margin-top: 5px;
+  }
+  
+  
+  @media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+    
+    .feedback-card {
+      width: 95%;
+      padding: 25px 20px;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+    
+   
+    .buttons {
+        flex-direction: column;
+        gap: 10px;
+        justify-content: center;
+    }
+    
+    .btn {
+        width: 100%;
+        box-sizing: border-box;
+        flex-grow: 0;
+    }
+  }
+ 
+
+</style>
+</head>
+<body>
+
+<div class="feedback-card">
+  <h1>Зворотний зв’язок</h1>
+  <p class="desc">Розкажіть нам про свій досвід — допоможіть зробити цифрові сервіси ще кращими.</p>
+    
+  <form id="feedbackForm">
+      <label>Ім’я та прізвище</label>
+      <input type="text" placeholder="Напр.: Олександр Шевченко" name="name">
+      <div class="hint">Можна вказати псевдонім.</div>
+    
+      <label>Ел. пошта</label>
+      <input type="email" placeholder="name@domain.ua" name="email">
+      <div class="hint">Потрібний для відповіді (не передаємо третім сторонам).</div>
+    
+      <label>Категорія</label>
+      <select name="category">
+        <option value="">Оберіть категорію</option>
+        <option value="support">Технічна підтримка</option>
+        <option value="suggestion">Пропозиція</option>
+        <option value="problem">Проблема</option>
+      </select>
+    
+      <label>Оцінка сервісу</label>
+      <div class="stars" data-rating="0">
+        <span class="star" data-value="1">&#9733;</span>
+        <span class="star" data-value="2">&#9733;</span>
+        <span class="star" data-value="3">&#9733;</span>
+        <span class="star" data-value="4">&#9733;</span>
+        <span class="star" data-value="5">&#9733;</span>
+      </div>
+      <small>1 — погано, 5 — відмінно.</small>
+    
+      <label>Ваш відгук</label>
+      <textarea placeholder="Опишіть, що сподобалось або що потрібно покращити..." name="feedback"></textarea>
+      <div class="hint">Мінімум 10 символів.</div>
+    
+      <div class="checkbox">
+        <input type="checkbox" id="agree" name="agree">
+        <label for="agree">Погоджуюсь на обробку персональних даних згідно з політикою конфіденційності.</label>
+      </div>
+    
+      <div class="buttons">
+        <a href="index.html" class="btn">Головна</a>
+        <button type="reset" class="btn clear" id="clearBtn">Очистити</button>
+        <button type="submit" class="btn" id="submitBtn">Надіслати відгук</button>
+      </div>
+  </form>
+</div>
+
+<script>
+  const stars = document.querySelectorAll('.star');
+  const form = document.getElementById('feedbackForm');
+  const submitBtn = document.getElementById('submitBtn');
+
+  
+  stars.forEach((star, i) => {
+    star.addEventListener('click', () => {
+    
+      stars.forEach((s, j) => s.classList.toggle('active', j <= i));
+      
+      
+      const rating = star.getAttribute('data-value');
+      
+    });
+  });
+
+  
+  form.addEventListener('submit', function(event) {
+    event.preventDefault(); 
+
+   
+    const feedbackText = form.querySelector('textarea[name="feedback"]').value;
+    if (feedbackText.length < 10) {
+        alert('Будь ласка, введіть відгук довжиною принаймні 10 символів.');
+        return;
+    }
+    
+    
+    submitBtn.textContent = 'Надсилання...';
+    submitBtn.disabled = true;
+
+    setTimeout(() => {
+        alert('✅ Ваш відгук успішно надіслано! Дякуємо за допомогу.');
+        
+        
+        form.reset();
+        stars.forEach(s => s.classList.remove('active'));
+        
+        
+        submitBtn.textContent = 'Надіслати відгук';
+        submitBtn.disabled = false;
+    }, 1500);
+  });
+  
+  
+  const clearBtn = document.getElementById('clearBtn');
+  clearBtn.addEventListener('click', () => {
+      setTimeout(() => {
+        stars.forEach(s => s.classList.remove('active'));
+      }, 0); 
+  });
+</script>
+
+</body>
+</html>
